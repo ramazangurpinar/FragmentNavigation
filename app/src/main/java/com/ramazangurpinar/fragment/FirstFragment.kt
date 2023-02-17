@@ -29,14 +29,15 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.button.setOnClickListener {
             next(it)
         }
     }
 
     fun next(view: View){
-        println("next tıklandı")
-        var action = FirstFragmentDirections.actionFirstFragmentToSecondFragment2()
+        var userInput = binding.nameText.text.toString()
+        var action = FirstFragmentDirections.actionFirstFragmentToSecondFragment2(userInput)
         Navigation.findNavController(view).navigate(action)
     }
 
