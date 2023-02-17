@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.ramazangurpinar.fragment.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
@@ -35,6 +36,8 @@ class FirstFragment : Fragment() {
 
     fun next(view: View){
         println("next tıklandı")
+        var action = FirstFragmentDirections.actionFirstFragmentToSecondFragment2()
+        Navigation.findNavController(view).navigate(action)
     }
 
     override fun onDestroyView() {
