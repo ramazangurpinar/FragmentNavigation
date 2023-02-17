@@ -11,8 +11,12 @@ import com.ramazangurpinar.fragment.databinding.FragmentSecondBinding
 class SecondFragment : Fragment() {
     private var _binding: FragmentSecondBinding? = null
     private val binding get() = _binding!!
+    var name = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arguments?.let {
+            name = SecondFragmentArgs.fromBundle(it).name
+        }
     }
 
     override fun onCreateView(
@@ -26,7 +30,7 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.textView.text="second fragment"
+        binding.textView.text=name
     }
 
     override fun onDestroyView() {

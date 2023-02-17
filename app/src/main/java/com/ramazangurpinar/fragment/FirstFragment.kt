@@ -36,8 +36,8 @@ class FirstFragment : Fragment() {
     }
 
     fun next(view: View){
-        var userInput = binding.nameText.text.toString()
-        var action = FirstFragmentDirections.actionFirstFragmentToSecondFragment2(userInput)
+        val userInput = binding.nameText.text.toString()
+        val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment2(userInput)
         Navigation.findNavController(view).navigate(action)
     }
 
